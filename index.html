@@ -1,0 +1,458 @@
+<html><head><meta charset="utf-8" /><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/github-gist.min.css" rel="stylesheet" type="text/css" /><title>Intro to Mill</title><style>@media (min-width: 60em) {.WideStyles-header{
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  width: 25%;
+}
+
+.WideStyles-tableOfContentsItem{
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.WideStyles-tableOfContents{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 0px;
+  width: 100%;
+}
+
+.WideStyles-content{
+  box-sizing: border-box;
+  margin-left: 25%;
+  padding: 48px;
+}
+
+.WideStyles-footer{
+  bottom: 0px;
+  height: 50px;
+  position: fixed;
+  width: 25%;
+}
+
+.WideStyles-marginLeftZero{
+  margin-left: 0px;
+}
+}</style><style>@media (max-width: 60em) {.NarrowStyles-header{
+  margin-bottom: 10px;
+}
+
+.NarrowStyles-content{
+  padding: 16px;
+}
+
+.NarrowStyles-headerContent{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.NarrowStyles-flexFont{
+  font-size: 4vw;
+}
+
+.NarrowStyles-disappear{
+  display: none;
+}
+
+.NarrowStyles-floatLeft{
+  float: left;
+  margin-left: 30px;
+}
+}</style><style>.Styles-hoverBox{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Styles-hoverBox:hover .Styles-hoverLink{
+  opacity: 0.5;
+}
+
+.Styles-hoverLink{
+  opacity: 0.1;
+}
+.Styles-hoverLink:hover{
+  opacity: 1.0;
+}
+
+.Styles-headerStyle{
+  background-color: rgb(61, 79, 93);
+  box-sizing: border-box;
+  display: flex;
+}
+
+.Styles-headerLinkBox{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.Styles-headerLink{
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 10px 10px;
+}
+
+.Styles-footerStyle{
+  color: rgb(158, 167, 174);
+  display: flex;
+  justify-content: center;
+}
+
+.Styles-subtleLink{
+  text-decoration: none;
+}
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/scala.min.js"></script><script>hljs.initHighlightingOnLoad();</script><meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" /></head><body style="margin: 0px;background-color: #f8f8f8;"><div class=" WideStyles-header NarrowStyles-header Styles-headerStyle"><div class=" NarrowStyles-headerContent"><h1 style="text-align: center;padding: 30px 30px;margin: 0px;"><a style="color: #f8f8f8;font-weight: bold;" href="" class=" Styles-subtleLink NarrowStyles-flexFont"><img src="logo-white.svg" style="height: 30px;margin-top: -5px;" /> Mill</a></h1><div class=" Styles-headerLinkBox"><div class=" WideStyles-tableOfContents" style="color: #f8f8f8;"><div style="padding-left: 40px;" class=" NarrowStyles-disappear"><b>Pages</b></div><div style="overflow-y: auto;flex-shrink: 1;min-height: 0px;"><ul style="overflow: hidden;text-align: start;margin-top: 10px;white-space: nowrap;text-overflow: ellipsis;margin-right: 10px;"><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="index.html">Intro to Mill</a></li><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="page/configuring-mill.html">Configuring Mill</a></li><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="page/common-project-layouts.html">Common Project Layouts</a></li><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="page/tasks.html">Tasks</a></li><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="page/modules.html">Modules</a></li><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="page/cross-builds.html">Cross Builds</a></li><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="page/extending-mill.html">Extending Mill</a></li><li class=" WideStyles-marginLeftZero NarrowStyles-floatLeft"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="page/mill-internals.html">Mill Internals</a></li></ul></div></div></div></div><hr class=" NarrowStyles-disappear" style="background-color: #f8f8f8;width: 80%;" /><div class=" WideStyles-tableOfContents NarrowStyles-disappear" style="color: #f8f8f8;"><div style="padding-left: 40px;" class=" NarrowStyles-disappear"><b>Table of Contents</b></div><div style="overflow-y: auto;flex-shrink: 1;min-height: 0px;"><ul style="overflow: hidden;text-align: start;margin-top: 10px;white-space: nowrap;text-overflow: ellipsis;margin-right: 10px;"><li style="margin-left: 0px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#output">Output</a></li><li style="margin-left: 0px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#multiple-modules">Multiple Modules</a></li><li style="margin-left: 0px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#watch-and-re-evaluate">Watch and Re-evaluate</a></li><li style="margin-left: 0px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#command-line-tools">Command-line Tools</a></li><li style="margin-left: 20px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#all">all</a></li><li style="margin-left: 20px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#resolve">resolve</a></li><li style="margin-left: 20px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#describe">describe</a></li><li style="margin-left: 20px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#show">show</a></li><li style="margin-left: 0px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#intellij-support">IntelliJ Support</a></li><li style="margin-left: 0px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#the-build-repl">The Build Repl</a></li><li style="margin-left: 0px;"><a style="color: #f8f8f8;" class=" WideStyles-tableOfContentsItem" href="#deploying-your-code">Deploying your code</a></li></ul></div></div></div><div class=" WideStyles-content NarrowStyles-content" style="max-width: 900px;"><h1>Intro to Mill</h1><div style="margin-bottom: 10px;"><div style="display: flex;flex-direction: row;justify-content: space-between;"><div></div><a href="page/configuring-mill.html">Configuring Mill <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div></div><p><a href="https://github.com/lihaoyi/mill">Mill</a> is your shiny new Scala build tool! <a href="http://www.lihaoyi.com/post/SowhatswrongwithSBT.html">Scared of SBT</a>? Melancholy over Maven? Grumbling about Gradle? Baffled by Bazel? Give Mill a try!</p>
+<p>Mill aims for simplicity by re-using concepts you are already <a href="http://www.lihaoyi.com/post/BuildToolsasPureFunctionalPrograms.html">familiar with</a>, borrowing ideas from modern tools like <a href="https://bazel.build/">Bazel</a>, to let you build your projects in a way that's simple, fast, and predictable.</p>
+<p>Mill has built in support for the <a href="https://www.scala-lang.org/">Scala</a> programming language, and can serve as a replacement for <a href="http://www.scala-sbt.org/">SBT</a>, but can also be <a href="http://www.lihaoyi.com/mill/page/extending-mill.html">extended</a> to support any other language or platform via modules (written in Java or Scala) or through external subprocesses.</p>
+<p>To get started, download Mill and install it into your system via the following <code>curl</code>/<code>chmod</code> command:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">sudo curl -L -o /usr/local/bin/mill https://github.com/lihaoyi/mill/releases/download/0.1.3/0.1.3 &amp;&amp; sudo chmod +x /usr/local/bin/mill
+</code></pre>
+<p>More recent, unstable versions of Mill are also <a href="https://github.com/lihaoyi/mill/releases/tag/unstable">available</a>, if you want to try out the latest features and improvements that are currently in master. Come by our <a href="https://gitter.im/lihaoyi/mill">Gitter Channel</a> if you want to ask questions or say hi!</p>
+<p>The simplest Mill build for a Scala project looks as follows:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="scala">// build.sc
+import mill._
+import mill.scalalib._
+
+object foo extends ScalaModule {
+  def scalaVersion = &quot;2.12.4&quot;
+}
+</code></pre>
+<p>This would build a project laid out as follows:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="">build.sc
+foo/
+    src/
+        Main.scala
+    resources/
+        ...
+out/
+    foo/
+        ... 
+</code></pre>
+<p>You can download an example project with this layout here:</p>
+<ul>
+  <li><a href="example-1.zip">Example 1</a></li>
+</ul>
+<p>The source code for this module would live in the <code>foo/src/</code> folder, matching the name you assigned to the module. Output for this module (compiled files, resolved dependency lists, ...) would live in <code>out/foo/</code>.</p>
+<p>This can be run from the Bash shell via:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill foo.compile                 # compile sources into classfiles
+
+$ mill foo.run                     # run the main method, if any
+
+$ mill foo.launcher                # prepares a foo/launcher/dest/run you can run later
+
+$ mill foo.jar                     # bundle the classfiles into a jar
+
+$ mill foo.assembly                # bundle classfiles and all dependencies into a jar
+ 
+$ mill foo.console                 # start a Scala console within your project
+ 
+$ mill foo.repl                    # start an Ammonite REPL within your project 
+</code></pre>
+<p>You can run <code>mill resolve __</code> to see a full list of the different tasks that are available, <code>mill resolve foo._</code> to see the tasks within <code>foo</code>, <code>mill describe
+foo.compile</code> to see what an individual task depends on, or <code>mill show
+foo.scalaVersion</code> to inspect the output of any task.</p>
+<p>The most common <strong>tasks</strong> that Mill can run are cached <strong>targets</strong>, such as <code>compile</code>, and un-cached <strong>commands</strong> such as <code>foo.run</code>. Targets do not re-evaluate unless one of their inputs changes, where-as commands re-run every time.</p><h2 id="output" class="Styles-hoverBox">Output<a href="#output" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Mill puts all it's output in the top-level <code>out/</code> folder. The above commands would end up in:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="text">out/
+    foo/
+        compile/
+        run/
+        jar/
+        assembly/
+</code></pre>
+<p>Within the output folder for each task, there's a <code>meta.json</code> file containing the metadata returned by that task, and a <code>dest/</code> folder containing any files that the task generates. For example, <code>out/foo/compile/dest/</code> contains the compiled classfiles, while <code>out/foo/assembly/dest/</code> contains the self-contained assembly with the project's classfiles jar-ed up with all it's dependencies.</p>
+<p>Given a task <code>foo.bar</code>, all it's output and results can be found be within it's respective <code>out/foo/bar/</code> folder.</p><h2 id="multiple-modules" class="Styles-hoverBox">Multiple Modules<a href="#multiple-modules" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="scala">// build.sc
+import mill._
+import mill.scalalib._
+object foo extends ScalaModule {
+  def scalaVersion = &quot;2.12.4&quot;
+}
+object bar extends ScalaModule {
+  def moduleDeps = Seq(foo)
+  def scalaVersion = &quot;2.12.4&quot;
+}
+</code></pre>
+<p>You can define multiple modules the same way you define a single module, using <code>def moduleDeps</code> to define the relationship between them. The above build expects the following project layout:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="">build.sc
+foo/
+    src/
+        Main.scala
+    resources/
+        ...
+bar/
+    src/
+        Main2.scala
+    resources/
+        ...
+out/
+    foo/
+        ... 
+    bar/
+        ... 
+</code></pre>
+<p>And can be built/run using:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill foo.compile        
+$ mill bar.compile        
+
+$ mill foo.run            
+$ mill bar.run            
+
+$ mill foo.jar            
+$ mill bar.jar            
+
+$ mill foo.assembly        
+$ mill bar.assembly        
+</code></pre>
+<p>Mill's evaluator will ensure that the modules are compiled in the right order, and re-compiled as necessary when source code in each module changes.</p>
+<p>Modules can also be nested:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="scala">// build.sc
+import mill._
+import mill.scalalib._
+object foo extends ScalaModule {
+  def scalaVersion = &quot;2.12.4&quot;
+  object bar extends ScalaModule {
+    def moduleDeps = Seq(foo)
+    def scalaVersion = &quot;2.12.4&quot;
+  }
+}
+</code></pre>
+<p>Which would result in a similarly nested project layout:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="">build.sc
+foo/
+    src/
+        Main.scala
+    resources/
+        ...
+    bar/
+        src/
+            Main2.scala
+        resources/
+            ...
+out/
+    foo/
+        ...
+        bar/
+            ...
+</code></pre>
+<p>Where the nested modules can be run via:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill foo.compile        
+$ mill foo.bar.compile        
+
+$ mill foo.run            
+$ mill foo.bar.run            
+
+$ mill foo.jar            
+$ mill foo.bar.jar            
+
+$ mill foo.assembly        
+$ mill foo.bar.assembly        
+</code></pre><h2 id="watch-and-re-evaluate" class="Styles-hoverBox">Watch and Re-evaluate<a href="#watch-and-re-evaluate" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>You can use the <code>--watch</code> flag to make Mill watch a task's inputs, re-evaluating the task as necessary when the inputs change:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill --watch foo.compile 
+$ mill --watch foo.run 
+</code></pre>
+<p>Mill's <code>--watch</code> flag watches both the files you are building using Mill, as well as Mill's own <code>build.sc</code> file and anything it imports, so any changes to your <code>build.sc</code> will automatically get picked up.</p><h2 id="command-line-tools" class="Styles-hoverBox">Command-line Tools<a href="#command-line-tools" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Mill comes built in with a small number of useful command-line utilities:</p><h3 id="all" class="Styles-hoverBox">all<a href="#all" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">mill all foo.{compile,run}
+mill all &quot;foo.{compile,run}&quot;
+mill all foo.compile foo.run
+mill all _.compile # run compile for every top-level module
+mill all __.compile  # run compile for every module
+</code></pre>
+<p><code>all</code> runs multiple tasks in a single command</p><h3 id="resolve" class="Styles-hoverBox">resolve<a href="#resolve" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill resolve _
+main
+moduledefs
+core
+scalaworker
+scalalib
+scalajslib
+integration
+testRepos
+...
+
+$ mill resolve _.compile
+
+main.compile
+moduledefs.compile
+core.compile
+scalaworker.compile
+scalalib.compile
+scalajslib.compile
+integration.compile
+
+$ mill resolve core._
+
+core.test
+core.compile
+core.publishVersion
+core.runClasspath
+core.testArgs
+core.sources
+...
+</code></pre>
+<p><code>resolve</code> lists the tasks that match a particular query, without running them. This is useful for "dry running" an <code>mill all</code> command to see what would be run before you run them, or to explore what modules or tasks are available from the command line using <code>resolve _</code>, <code>resolve foo._</code>, etc.</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">mill resolve foo.{compile,run}
+mill resolve &quot;foo.{compile,run}&quot;
+mill resolve foo.compile foo.run
+mill resolve _.compile          # list the compile tasks for every top-level module
+mill resolve __.compile         # list the compile tasks for every module
+mill resolve _                  # list every top level module or task
+mill resolve foo._              # list every task directly within the foo module
+mill resolve __                 # list every module or task recursively
+mill resolve foo.__             # list every task recursively within the foo module
+</code></pre><h3 id="describe" class="Styles-hoverBox">describe<a href="#describe" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill describe core.run
+
+core.run(ScalaModule.scala:211)
+Inputs:
+    core.mainClass
+    core.runClasspath
+    core.forkArgs
+    core.forkEnv
+</code></pre>
+<p><code>describe</code> is a more verbose version of <a href="#resolve">resolve</a>. In addition to printing out the name of one-or-more tasks, it also display's it's source location and a list of input tasks. This is very useful for debugging and interactively exploring the structure of your build from the command line.</p>
+<p><code>describe</code> also works with the same <code>_</code>/<code>__</code> wildcard/query syntaxes that <a href="#all">all</a>/<a href="#resolve">resolve</a> do:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">mill describe foo.compile
+mill describe foo.{compile,run}
+mill describe &quot;foo.{compile,run}&quot;
+mill describe foo.compile foo.run
+mill describe _.compile
+mill describe __.compile
+mill describe _
+mill describe foo._
+mill describe __
+mill describe foo._
+</code></pre><h3 id="show" class="Styles-hoverBox">show<a href="#show" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill show core.scalaVersion
+&quot;2.12.4&quot;
+</code></pre>
+<p>By default, Mill does not print out the metadata from evaluating a task. Most people would not be interested in e.g. viewing the metadata related to incremental compilation: they just want to compile their code! However, if you want to inspect the build to debug problems, you can make Mill show you the metadata output for a task using the <code>show</code> command:</p>
+<p>All tasks return values that can be <code>show</code>n, not just configuration values. e.g. <code>compile</code> returns that path to the <code>classes</code> and <code>analysisFile</code> that are produced by the compilation:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill show foo.compile
+{
+    &quot;analysisFile&quot;: &quot;/Users/lihaoyi/Dropbox/Github/test/out/foo/compile/dest/zinc&quot;,
+    &quot;classes&quot;: {
+        &quot;path&quot;: &quot;/Users/lihaoyi/Dropbox/Github/test/out/foo/compile/dest/classes&quot;
+    }
+}
+</code></pre>
+<p><code>show</code> is generally useful as a debugging tool, to see what is going on in your build:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill show foo.sources
+[
+    {&quot;path&quot;: &quot;/Users/lihaoyi/Dropbox/Github/test/foo/src&quot;}
+]
+
+$ mill show foo.compileDepClasspath
+[
+    {&quot;path&quot;: &quot;.../org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4.jar&quot;},
+    {&quot;path&quot;: &quot;.../org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar&quot;},
+    {&quot;path&quot;: &quot;.../org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4.jar&quot;},
+    {&quot;path&quot;: &quot;.../org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar&quot;}
+]
+</code></pre>
+<p><code>show</code> is also useful for interacting with Mill from external tools, since the JSON it outputs is structured and easily parsed &amp; manipulated.</p><h2 id="intellij-support" class="Styles-hoverBox">IntelliJ Support<a href="#intellij-support" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Mill supports IntelliJ by default. Use <code>mill mill.scalalib.GenIdeaModule/idea</code> to generate an IntelliJ project config for your build.</p>
+<p>This also configures IntelliJ to allow easy navigate &amp; code-completion within your build file itself.</p><h2 id="the-build-repl" class="Styles-hoverBox">The Build Repl<a href="#the-build-repl" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill -i
+Loading...
+@ foo
+res1: foo.type = ammonite.predef.build#foo:2
+Commands:
+    .runLocal(args: String*)()
+    .run(args: String*)()
+    .runMainLocal(mainClass: String, args: String*)()
+    .runMain(mainClass: String, args: String*)()
+    .console()()
+Targets:
+    .allSources()
+    .artifactId()
+    .artifactName()
+...
+
+@ foo.compile
+res3: mill.package.T[mill.scalalib.CompilationResult] = mill.scalalib.ScalaModule#compile:152
+Inputs:
+    foo.scalaVersion
+    foo.allSources
+    foo.compileDepClasspath
+...
+    
+@ foo.compile()
+res2: mill.scalalib.CompilationResult = CompilationResult(
+  root/&#39;Users/&#39;lihaoyi/&#39;Dropbox/&#39;Github/&#39;test/&#39;out/&#39;foo/&#39;compile/&#39;dest/&#39;zinc,
+  PathRef(root/&#39;Users/&#39;lihaoyi/&#39;Dropbox/&#39;Github/&#39;test/&#39;out/&#39;foo/&#39;compile/&#39;dest/&#39;classes, false)
+)
+</code></pre>
+<p>You can run <code>mill</code> alone to open a build REPL; this is a Scala console with your <code>build.sc</code> loaded, which lets you run tasks interactively. The task-running syntax is slightly different from the command-line, but more in-line with how you would depend on tasks from within your build file.</p>
+<p>You can use this REPL to run build commands quicker, due to keeping the JVM warm between runs, or to interactively explore your build to see what is available.</p><h2 id="deploying-your-code" class="Styles-hoverBox">Deploying your code<a href="#deploying-your-code" class=" Styles-hoverLink"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The two most common things to do once your code is complete is to make an assembly (e.g. for deployment/installation) or publishing (e.g. to Maven Central). Mill comes with both capabilities built in.</p>
+<p>Mill comes built-in with the ability to make assemblies. Given a simple Mill build:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="scala">// build.sc
+import mill._, scalalib._
+
+object foo extends ScalaModule{
+  def scalaVersion = &quot;2.12.4&quot;
+}
+</code></pre>
+<p>You can make a self-contained assembly via:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill foo.assembly
+
+$ ls -lh out/foo/assembly/dest/out.jar
+-rw-r--r--  1 lihaoyi  staff   5.0M Feb 17 11:14 out/foo/assembly/dest/out.jar
+</code></pre>
+<p>You can then move the <code>out.jar</code> file anywhere you would like, and run it standalone using <code>java</code>:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ java -cp out/foo/assembly/dest/out.jar foo.Example
+Hello World!
+</code></pre>
+<p>To publish to Maven Central, you need to make <code>foo</code> extend Mill's <code>PublishModule</code> trait:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="scala">// build.sc
+import mill._, scalalib._, publish._
+
+object foo extends PublishModule{
+  def scalaVersion = &quot;2.12.4&quot;
+  def publishVersion = &quot;0.0.1&quot;
+
+  def pomSettings = PomSettings(
+    description = &quot;Hello&quot;,
+    organization = &quot;com.lihaoyi&quot;,
+    url = &quot;https://github.com/lihaoyi/example&quot;,
+    licenses = Seq(License.MIT),
+    versionControl = VersionControl.github(&quot;lihaoyi&quot;, &quot;example&quot;),
+    developers = Seq(
+      Developer(&quot;lihaoyi&quot;, &quot;Li Haoyi&quot;,&quot;https://github.com/lihaoyi&quot;)
+    )
+  )
+}
+</code></pre>
+<p>You can download an example project with this layout here:</p>
+<ul>
+  <li><a href="example-2.zip">Example 2</a></li>
+</ul>
+<p>Which you can then publish using the <code>mill foo.publish</code> command, which takes your sonatype credentials (e.g. <code>lihaoyi:foobarbaz</code>) and GPG password as inputs:</p>
+<pre style="background-color: #f8f8f8"><code style="white-space:pre; background-color: #f8f8f8" class="bash">$ mill foo.publish
+Missing arguments: (--sonatypeCreds: String, --gpgPassphrase: String, --release: Boolean)
+
+Arguments provided did not match expected signature:
+
+publish
+  --sonatypeCreds  String (format: &quot;username:password&quot;)
+  --gpgPassphrase  String
+  --release        Boolean
+</code></pre>
+<p>You also need to specify <code>release</code> as <code>true</code> or <code>false</code>, depending on whether you just want to stage your module on <code>oss.sonatype.org</code> or you want Mill to complete the release process to Maven Central.</p>
+<p>If you are publishing multiple artifacts, you can also use `target/bin/mill mill.scalalib.PublishModule/publishAll1 as described <a href="http://www.lihaoyi.com/mill/page/common-project-layouts.html#publishing">here</a></p><hr /><p><b>About the Author:</b><i> Haoyi is a software engineer, an early contributor to <a href="http://www.scala-js.org/">Scala.js</a>, and the author of many open-source Scala tools such as Mill, the <a href="lihaoyi.com/Ammonite">Ammonite REPL</a> and <a href="https://github.com/lihaoyi/fastparse">FastParse</a>. </i></p><p><i>If you've enjoy using Mill, or enjoyed using Haoyi's other open source libraries, please chip in (or get your Company to chip in!) via <a href="https://www.patreon.com/lihaoyi">Patreon</a> so he can continue his open-source work</i></p><hr /><div style="display: flex;flex-direction: row;justify-content: space-between;"><div></div><a href="page/configuring-mill.html">Configuring Mill <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div></div></body></html>
